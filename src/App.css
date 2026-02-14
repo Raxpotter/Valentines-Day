@@ -1,106 +1,52 @@
-/* 1. The Full-Screen Background Wrapper */
 .centered-container {
   display: flex;
-  justify-content: center; /* Centers the dialog horizontally */
-  align-items: center;     /* Centers the dialog vertically */
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   width: 100vw;
   margin: 0;
   
-  /* Your personal photo from the public folder */
-  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/background.jpeg'); 
+  /* Your background photo */
+  background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('/background.jpeg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   
-  font-family: "Times New Roman", Times, serif;
+  overflow: hidden; /* Prevents unwanted scrolling */
 }
 
-/* 2. The Glassmorphism Dialog Box */
 .valentine-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   
-  /* Glass effect logic */
-  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
-  backdrop-filter: blur(12px);          /* Blurs the background photo behind the box */
-  -webkit-backdrop-filter: blur(12px);  /* Safari support */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.15); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   
-  padding: 40px;
+  /* Resizing logic: Small and compact */
+  padding: 20px 30px; /* Reduced vertical padding */
+  width: 320px;       /* Fixed width to keep it small */
   border-radius: 20px;
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   
-  max-width: 90%;
-  text-align: center;
+  transition: all 0.3s ease; /* Makes size changes smooth */
 }
 
-/* 3. Text & Buttons (kept your logic with minor tweaks for readability) */
+/* Make the GIF inside the box smaller too, so the box stays small */
+.valentine-container img {
+  width: 180px !important; 
+  height: auto !important;
+  border-radius: 10px;
+}
+
 .text-container {
-  font-size: 2.25rem;
-  margin: 1.5rem 0;
-  color: white; /* White text looks better on glass */
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-}
-
-.yes-button {
-  font-family: Cambria, Cochin, Georgia, Times, serif;
-  background-color: #28a745; 
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 8px;
-  margin-right: 10px;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.yes-button:hover {
-  background-color: #218838;
-  transform: scale(1.05);
-}
-
-.no-button {
-  background-color: #c90d0d;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-.no-button:hover {
-  background-color: #a00a0a;
-}
-
-/* Github link positioning */
-.github-link {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #fff;
-  text-decoration: none;
-  background: rgba(0,0,0,0.3);
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-/* Your Scrollbar Styles (kept as is) */
-*::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-}
-*::-webkit-scrollbar-track {
-  border-radius: 5px;
-  background-color: #DCE7E1;
-  border: 6px double #FFFFFF;
-}
-*::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: #CF3E6E;
-  border: 2px double #FFFFFF;
+  font-size: 1.5rem; /* Slightly smaller text to fit the smaller box */
+  margin: 15px 0;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
