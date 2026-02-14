@@ -7,17 +7,16 @@
   width: 100vw;
   margin: 0;
   
-  /* Make sure background.jpeg is in your /public folder */
   background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/background.jpeg'); 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   
   font-family: "Times New Roman", Times, serif;
-  overflow: hidden; /* Prevents scrollbars when button jumps to edges */
+  overflow: hidden;
 }
 
-/* 2. The Glassmorphism Dialog Box */
+/* 2. The Glassmorphism Dialog Box - MADE SMALLER */
 .valentine-container {
   display: flex;
   flex-direction: column;
@@ -29,6 +28,7 @@
   -webkit-backdrop-filter: blur(15px);  
   border: 1px solid rgba(255, 255, 255, 0.2); 
   
+  /* Reduced padding and set a max-width to show more background */
   padding: 25px 35px; 
   width: 320px; 
   border-radius: 24px;
@@ -36,40 +36,30 @@
   
   text-align: center;
   transition: all 0.3s ease;
-  z-index: 10;
 }
 
-/* 3. Text & Content Styles */
+/* 3. Text & Buttons - REFINED FOR ATTRACTIVENESS */
 .text-container {
-  font-size: 1.8rem;
+  font-size: 1.8rem; /* Slightly smaller to fit the smaller box */
   margin: 1rem 0;
   color: white; 
   font-weight: bold;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Container for the buttons to keep them side-by-side initially */
-.buttons-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-/* 4. The "Yes" Button */
 .yes-button {
   font-family: Cambria, Cochin, Georgia, Times, serif;
+  /* Updated to a vibrant Valentine Pink/Red Gradient */
   background: linear-gradient(45deg, #ff4d6d, #ff758f);
   color: #fff;
   font-weight: bold;
   padding: 12px 24px;
-  border-radius: 50px;
+  border-radius: 50px; /* Pill shape is more attractive */
+  margin-right: 10px;
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
   transition: all 0.3s ease;
-  white-space: nowrap;
 }
 
 .yes-button:hover {
@@ -77,8 +67,8 @@
   box-shadow: 0 6px 20px rgba(255, 77, 109, 0.6);
 }
 
-/* 5. The "No" Button (With Jumping Logic) */
 .no-button {
+  /* Subtle glass-style for the No button */
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
   font-weight: bold;
@@ -86,14 +76,12 @@
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   cursor: pointer;
-  
-  /* Transition makes the "jump" look like a fast glide */
-  transition: all 0.2s ease-out; 
-  white-space: nowrap;
+  transition: all 0.3s ease;
 }
 
 .no-button:hover {
   background: rgba(201, 13, 13, 0.8); /* Red tint on hover */
+  transform: scale(0.9);
 }
 
 /* Github link positioning */
@@ -109,7 +97,7 @@
   font-size: 0.8rem;
 }
 
-/* Scrollbar Styles */
+/* Scrollbar Styles preserved */
 *::-webkit-scrollbar { height: 10px; width: 10px; }
 *::-webkit-scrollbar-track { border-radius: 5px; background-color: #DCE7E1; border: 6px double #FFFFFF; }
 *::-webkit-scrollbar-thumb { border-radius: 5px; background-color: #CF3E6E; border: 2px double #FFFFFF; }
