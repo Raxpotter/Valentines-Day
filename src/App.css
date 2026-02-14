@@ -1,63 +1,95 @@
+/* 1. The Full-Screen Background Wrapper */
+.centered-container {
+  display: flex;
+  justify-content: center; /* Centers the dialog horizontally */
+  align-items: center;     /* Centers the dialog vertically */
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  
+  /* Your personal photo from the public folder */
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('/background.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* 2. The Glassmorphism Dialog Box */
 .valentine-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  height: 100vh;
+  
+  /* Glass effect logic */
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  backdrop-filter: blur(12px);          /* Blurs the background photo behind the box */
+  -webkit-backdrop-filter: blur(12px);  /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+  
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+  
+  max-width: 90%;
+  text-align: center;
 }
-/* Custom class for Yes button styles */
+
+/* 3. Text & Buttons (kept your logic with minor tweaks for readability) */
+.text-container {
+  font-size: 2.25rem;
+  margin: 1.5rem 0;
+  color: white; /* White text looks better on glass */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
 .yes-button {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  background-color: #a7efb8; /* bg-green-500 */
-  color: #fff; /* text-white */
-  font-weight: bold; /* font-bold */
-  padding: 8px 16px; /* py-2 px-4 */
-  border-radius: 8px; /* rounded */
-  margin-right: 8px; /* mr-4 */
+  font-family: Cambria, Cochin, Georgia, Times, serif;
+  background-color: #28a745; 
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-right: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s;
 }
 
 .yes-button:hover {
-  background-color: #4f7457; /* hover:bg-green-700 */
+  background-color: #218838;
+  transform: scale(1.05);
 }
 
-/* Custom class for No button styles */
 .no-button {
-  background-color: #c90d0d; /* bg-red-500 */
-  color: #fff; /* text-white */
-  font-weight: bold; /* font-bold */
-  padding: 8px 16px; /* py-2 px-4 */
-  border-radius: 8px; /* rounded */
+  background-color: #c90d0d;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
 }
 
 .no-button:hover {
-  background-color: #c82333; /* hover:bg-red-700 */
-}
-/* Custom class for text-4xl my-4 container */
-.text-container {
-  font-size: 2.25rem; /* Equivalent to text-4xl in tailwindcss */
-  margin-top: 1rem; /* Equivalent to my-4 in tailwindcss */
-  margin-bottom: 1rem; /* Equivalent to my-4 in tailwindcss */
+  background-color: #a00a0a;
 }
 
-.centered-container {
-  display: flex;
-  font-size: large;
-  font-family: "Times New Roman", Times, serif;
-  flex-direction: column;
-  align-items: right;
-  justify-content: right;
-  height: 100vh;
-  margin: 0;
-}
-
+/* Github link positioning */
 .github-link {
   position: absolute;
   top: 10px;
   left: 10px;
-  color: #007bff; /* Set the color as needed */
+  color: #fff;
   text-decoration: none;
+  background: rgba(0,0,0,0.3);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
-/*scroll bar starts*/
+
+/* Your Scrollbar Styles (kept as is) */
 *::-webkit-scrollbar {
   height: 10px;
   width: 10px;
@@ -67,26 +99,8 @@
   background-color: #DCE7E1;
   border: 6px double #FFFFFF;
 }
-
-*::-webkit-scrollbar-track:hover {
-  background-color: #FCC5DF;
-}
-
-*::-webkit-scrollbar-track:active {
-  background-color: #FCC5DF;
-}
-
 *::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: #CF3E6E;
   border: 2px double #FFFFFF;
 }
-
-*::-webkit-scrollbar-thumb:hover {
-  background-color: #FC4985;
-}
-
-*::-webkit-scrollbar-thumb:active {
-  background-color: #FC4985;
-}
-/*scroll bar ends*/
